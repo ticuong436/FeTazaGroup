@@ -1,0 +1,72 @@
+/* ----------------------------------------------------------------------------------------------------- */
+/*  @ Import/write your custom styles here.
+/*  @ Styles from this file will override 'vendors.scss' and Fuse's base styles.
+/* ----------------------------------------------------------------------------------------------------- */
+.scroll::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+     background-color: #ddd;
+}
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #00256e;
+}
+.mat-drawer-inner-container::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+     background-color: #ddd;
+}
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #00256e;
+}
+
+
+  .sm-icon
+  {
+    width: 24px;
+    height: 24px;
+  }
+  .cal-month-view 
+{
+	.cal-day-cell {min-height: 50px !important;}
+}
+.ck.ck-content
+	{
+		border: 1px dotted lightskyblue;
+	}
+.ck.ck-editor__editable > .ck-placeholder::before {
+		color: rgb(59 130 246)!important ;
+		font-family: Georgia;
+}
+.ck.ck-content a
+	{
+	color: blue;
+    text-decoration: underline;
+	}
+// .ck-editor__editable {
+// 		min-height: 200px !important;
+// 	}
+.mat-tab-header {
+	.mat-tab-label-container {
+		.mat-tab-list {
+			.mat-tab-labels {
+				.mat-tab-label {
+					&.mat-tab-label-active {
+						background-color:lightskyblue!important ;
+					}
+				}
+			}
+		}
+	}
+}
+.mat-select-value-text
+{
+	color: rgb(59 130 246)!important ;
+	font-weight: 600;
+}
+.mat-sort-header-container {
+    justify-content: center;
+}

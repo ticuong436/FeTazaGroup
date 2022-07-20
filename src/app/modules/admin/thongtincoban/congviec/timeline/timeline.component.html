@@ -1,0 +1,21 @@
+<!-- <div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [dataLabels]="chartOptions.dataLabels"
+      [plotOptions]="chartOptions.plotOptions"
+      [xaxis]="chartOptions.xaxis"
+      [legend]="chartOptions.legend"
+    ></apx-chart>
+  </div> -->
+  <!-- <google-chart
+  [title]="chart.title"
+  [type]="chart.type"
+  [data]="chart.data"
+  [columns]="chart.columnNames"
+  [options]="chart.options"
+>
+</google-chart> -->
+<div class="p-4">
+  <google-chart [type]="type" [columns]="cols" [data]="data" [options]="options" class="w-full"></google-chart>
+</div>

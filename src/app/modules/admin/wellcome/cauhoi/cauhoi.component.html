@@ -1,0 +1,148 @@
+<div class="flex flex-col flex-auto min-w-0">
+    <div class="relative pt-8 pb-28 px-4 sm:pt-20 sm:pb-48 sm:px-16 overflow-hidden bg-gray-800 dark:bg-gray-900 dark">
+        <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%"
+            preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+            <g class="text-gray-700 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
+                <circle r="234" cx="196" cy="23"></circle>
+                <circle r="234" cx="790" cy="491"></circle>
+            </g>
+        </svg>
+        <div class="z-10 relative flex flex-col items-center">
+            <h2 class="text-xl font-semibold">TRUNG TÂM GIẢI ĐÁP THẮC MẮC</h2>
+            <div class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center">
+                Hôm nay bạn cần giải đáp vấn đề gì không?
+            </div>
+            <div class="mt-3 sm:text-2xl text-center tracking-tight text-secondary">
+                Tìm kiếm chủ đề, câu hỏi thường gặp và hướng dẫn sử dụng. Liên hệ, gửi câu hỏi cần giải đáp ở mục hỗ trợ
+                nhé.
+            </div>
+            <div class="flex flex-col items-center justify-center w-full">
+                <mat-form-field class="fuse-mat-no-subscript fuse-mat-rounded fuse-mat-bold w-full max-w-80 sm:max-w-120 mt-10">
+                    <input
+                        matInput
+                        [placeholder]="'Tìm Kiếm'"
+                        (input)="filterByQuery(query.value)"
+                        #query>
+                    <mat-icon
+                        matPrefix
+                        [svgIcon]="'heroicons_outline:search'"></mat-icon>
+                </mat-form-field>  
+                <div class="flex flex-col space-y-2 max-w-120 p-4 overflow-auto scroll" [ngClass]="{'h-48': filteredCauhois.length!=0}">
+                    <div *ngFor="let item of filteredCauhois;let i = index">
+                        <div class="flex flex-row space-x-2">
+                            <span>{{i+1}}.</span>
+                            <span [innerHTML]="item.NoidungCauhoi"></span>
+                        </div>
+
+                        <mat-divider></mat-divider>
+                    </div>
+                </div>
+                  
+                <!-- <div>ádấd
+                    <div *ngFor="let item of filteredCauhois">
+                        <span [innerHTML]="item.NoidungCauhoi"></span>
+                    </div>
+                </div> -->
+            </div>        
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center pb-6 px-6 sm:pb-10 sm:px-10">
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-0 md:gap-x-6 w-full max-w-sm md:max-w-4xl -mt-16 sm:-mt-24">
+            <div
+                class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transform transition-shadow ease-in-out duration-150">
+                <div class="flex flex-col flex-auto items-center p-4 text-center">
+                    <div class="text-2xl font-semibold">Câu hỏi</div>
+                    <div class="mt-1 text-secondary">Câu Hỏi Thường Gặp Và Câu Trả Lời</div>
+                </div>
+                <div
+                    class="flex flex-col space-y-4 items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
+                    <a class="flex items-center" [routerLink]="['faq']">
+                        <!-- <span class="absolute inset-0"></span> -->
+                        <span class="font-medium">Xem Thêm</span>
+                        <mat-icon class="ml-2 icon-size-5 text-current"
+                            [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                    </a>
+                    <a class="flex items-center" [routerLink]="['cauhoiadmin']" *ngIf="thisUser.Role!='user'">
+                        <!-- <span class="absolute inset-0"></span> -->
+                        <span class="font-medium">Quản Lý Câu Hỏi</span>
+                        <mat-icon class="ml-2 icon-size-5 text-current"
+                            [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                    </a>
+                </div>
+            </div>
+            <!-- <div
+                class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transform transition-shadow ease-in-out duration-150">
+                <div class="flex flex-col flex-auto items-center p-8 text-center">
+                    <div class="text-2xl font-semibold">Hướng Dẫn</div>
+                    <div class="md:max-w-40 mt-1 text-secondary">Các bài viết và dữ liệu hướng dẫn chi tiết</div>
+                </div>
+                <div
+                    class="flex flex-col space-y-4 items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
+                    <a class="flex items-center" [routerLink]="['huongdan']">
+                        <span class="font-medium">Xem Thêm</span>
+                        <mat-icon class="ml-2 icon-size-5 text-current"
+                            [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                    </a>
+                    <a class="flex items-center" [routerLink]="['huongdanadmin']" *ngIf="thisUser.Role!='user'">
+                        <span class="font-medium">Quản Lý Hướng Dẫn</span>
+                        <mat-icon class="ml-2 icon-size-5 text-current"
+                            [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                    </a>
+                </div>
+            </div> -->
+            <div
+                class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transform transition-shadow ease-in-out duration-150">
+                <div class="flex flex-col flex-auto items-center p-4 text-center">
+                    <div class="text-2xl font-semibold">Hỗ trợ</div>
+                    <div class="mt-1 text-secondary">Liên hệ hoặc gửi câu hỏi, thắc mắc để được giải đáp
+                    </div>
+                </div>
+                <div
+                    class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
+                    <a class="flex items-center" [routerLink]="['hotro']">
+                        <span class="absolute inset-0"></span>
+                        <span class="font-medium">Gửi câu hỏi</span>
+                        <mat-icon class="ml-2 icon-size-5 text-current"
+                            [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                    </a>
+                </div>
+            </div>           
+        </div>
+        <div class="mt-12 text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-center">Những Vấn Đề
+            Đang Được Quan Tâm</div>
+        <div class="mt-2 text-xl text-center text-secondary">Top 10 câu hỏi được quan tâm nhất.</div>
+        <mat-accordion class="w-3/4 mt-12">
+            <ng-container *ngFor="let cauhoi of cauhois; trackBy: trackByFn">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title *ngIf="cauhoi.Vitri">
+
+                            <div  class="flex justify-between items-center" [innerHTML]="cauhoi.NoidungCauhoi"></div>
+                            <!-- <div class="flex flex-row space-x-2" *ngIf="(cauhoi.Vitri|keyvalue).length-1 != (Vitri|keyvalue).length; else elseTemplate">
+                                <mat-menu #menu="matMenu">
+                                  <ng-container *ngFor="let item of cauhoi.Vitri">
+                                    <button mat-menu-item> {{Vitri[item]}}</button>
+                                    </ng-container>
+                                </mat-menu>
+                             </div>
+                             <ng-template #elseTemplate>
+                                <div class="my-auto flex flex-0 items-center justify-center w-8 h-8 rounded-full ring ring-offset-1 ring-bg-card ring-offset-transparent bg-gray-200 text-gray-500">
+                                    <div class="text-md font-semibold">
+                                        Tất Cả
+                                    </div>
+                                </div>
+                                 <span class="text-center p-1 m-1 rounded-full text-white bg-blue-500 dark:text-gray-300 dark:bg-gray-700">
+                                  Tất Cả
+                                  </span>
+                               </ng-template> -->
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div [innerHTML]="cauhoi.NoidungTraloi"></div>
+                    
+                </mat-expansion-panel>
+            </ng-container>
+        </mat-accordion>
+    </div>
+</div>

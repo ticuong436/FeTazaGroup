@@ -1,0 +1,226 @@
+<div class="w-full flex flex-col space-y-4 p-4 break-all">
+    <div class="font-bold">Thông Tin Cá Nhân</div>
+    <div class="grid grid-cols-2 gap-4 w-full">
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                    account_circle
+                    </span> 
+                 <span>Họ Và Tên</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.name,'bg-blue-400 hover:bg-blue-600': CNhanvien.name}">
+             <span>{{CNhanvien.name||'Trống'}}</span>
+           </div>
+        </div>
+
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                    phone_iphone
+                    </span> 
+                 <span>Số Điện Thoại</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.SDT,'bg-blue-400 hover:bg-blue-600': CNhanvien.SDT}">
+             <span>{{CNhanvien.SDT||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                       email
+                    </span> 
+                 <span>Email</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.email,'bg-blue-400 hover:bg-blue-600': CNhanvien.email}">
+             <span>{{CNhanvien.email||'Trống'}}</span>             
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  groups
+                    </span> 
+                 <span>Role</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.Role,'bg-blue-400 hover:bg-blue-600': CNhanvien.Role}">
+             <span>{{CNhanvien.Role||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  qr_code
+                    </span> 
+                 <span>Mã Nhân Viên</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.MaNV,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.MaNV}">
+             <span>{{CNhanvien.profile.MaNV||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  male
+                    </span> 
+                 <span>Giới Tính</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Gioitinh,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Gioitinh}">
+             <span>{{CNhanvien.profile.Gioitinh||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  cake
+                    </span> 
+                 <span>Ngày Sinh</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Ngaysinh,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Ngaysinh}">
+             <span>{{CNhanvien.profile.Ngaysinh|date:'dd/MM/yyyy'||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  badge
+                    </span> 
+                 <span>CMND/CCCD</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.CMND,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.CMND}">
+             <span>{{CNhanvien.profile.CMND||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  home
+                    </span> 
+                 <span>Địa Chỉ</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Diachi,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Diachi}">
+             <span>{{CNhanvien.profile.Diachi||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  share
+                    </span> 
+                 <span>Zalo</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Zalo,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Zalo}">
+             <span>{{CNhanvien.profile.Zalo||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  share
+                    </span> 
+                 <span>Facebook</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Fb,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Fb}">
+             <span>{{CNhanvien.profile.Fb||'Trống'}}</span>
+           </div>
+        </div>
+    </div>
+  
+    <mat-divider></mat-divider>
+    <div class="font-bold">Thông Tin Công Ty</div>
+    <div class="grid grid-cols-2 gap-4 w-full">
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  business
+                    </span> 
+                 <span>Công Ty</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.congty,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.congty}">
+             <span>{{Congty[CNhanvien.profile.congty]||'Trống'}}</span>
+           </div>
+        </div>
+
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  workspaces
+                    </span> 
+                 <span>Khối</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Khoi,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Khoi}">
+             <span>{{Khoi[CNhanvien.profile.Khoi]||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  meeting_room
+                    </span> 
+                 <span>Phòng Ban</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Phongban,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Phongban}">
+             <span>{{Phongban[CNhanvien.profile.Phongban]||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  diversity_3 
+                    </span> 
+                 <span>Bộ Phận</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Bophan,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Bophan}">
+             <span>{{Bophan[CNhanvien.profile.Bophan]||'Trống'}}</span>
+           </div>
+        </div>
+        <div class="w-full flex flex-row items-center justify-between space-x-4">
+            <div class="flex items-center space-x-2">
+                <span class="material-icons">
+                  location_on
+                    </span> 
+                 <span>Vị trí</span>
+            </div>
+           <div class="max-w-2/3 p-2 rounded text-white" [ngClass]="{'bg-red-400 hover:bg-red-600': !CNhanvien.profile.Vitri,'bg-blue-400 hover:bg-blue-600': CNhanvien.profile.Vitri}">
+             <span>{{Vitri[CNhanvien.profile.Vitri]||'Trống'}}</span>
+           </div>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="font-bold">Phân Quyền</div> 
+    <div class="grid grid-cols-2 gap-4 w-full">
+        <div>
+        <div>Menu </div>
+        <mat-tree #treeMenu [dataSource]="dataTreeSource" [treeControl]="treeControl" class="example-tree">
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+               <mat-slide-toggle [checked]="node.status" (change)="ChangeMenu(node, $event)">{{node.title}}</mat-slide-toggle>
+            </mat-tree-node>
+            <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+                <div class="mat-tree-node">
+                  <button mat-icon-button matTreeNodeToggle
+                          [attr.aria-label]="'Toggle ' + node.name">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                      {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                  </button>
+                  <mat-slide-toggle [checked]="node.status">{{node.title}}</mat-slide-toggle>
+                </div>
+                <div [class.example-tree-invisible]="!treeControl.isExpanded(node)"
+                    role="group">
+                  <ng-container matTreeNodeOutlet></ng-container>
+              </div>
+            </mat-nested-tree-node>
+          </mat-tree>
+        </div>
+        <div class="flex flex-col space-y-4">
+          <div>Chi Nhánh</div>
+              <div *ngFor="let item of CNhanvien.Phanquyen|keyvalue; let i=index">
+                <mat-slide-toggle (change)="ChangeChinhanh(item.key, $event)" [checked]="item.value">{{Chinhanh[item.key]}}</mat-slide-toggle>
+                <!-- <div *ngFor="let item of PQMenu |keyvalue">
+                 <mat-checkbox [disabled]="PQisDisabled"
+                      (change)="ChangeMenu(item.key, $event)" [checked]="item.value">
+                      {{item.key|findbyuuid:Menu:'title'}}</mat-checkbox>
+              </div> -->
+              </div>  
+        </div>
+    </div> 
+</div>
